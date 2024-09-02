@@ -1,0 +1,9 @@
+<app-add-todo (add)="addTodo($event)"></app-add-todo>
+<ul>
+  @for (todo of todos; track todo.id) {
+  <app-todo-list-item
+    [todo]="todo"
+    (delete)="deleteTodo($event)"
+  ></app-todo-list-item>
+  }
+</ul>
