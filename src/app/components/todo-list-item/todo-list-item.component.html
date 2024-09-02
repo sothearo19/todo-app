@@ -1,20 +1,24 @@
 <li>
-  @if (editable) {
-  <input
-    type="text"
-    [(ngModel)]="todo.title"
-    name="todoTitle"
-    placeholder="Edit todo"
-  />
-  <button (click)="editable = false">Save</button>
-  } @else {
-  <span>{{ todo.title }}</span>
-  }
-  <input
-    type="checkbox"
-    [checked]="todo.completed"
-    (change)="onCheckboxChange($event)"
-  />
-  <button (click)="onDelete()">x</button>
-  <button (click)="editable = true">Edit</button>
+  <label>
+    <input
+      type="checkbox"
+      name="checkbox"
+      [checked]="todo.completed"
+      (change)="onCheckboxChange($event)"
+    />
+    <span class="checkmark"></span>
+  </label>
+  <p
+    #editableParagraph
+    [contentEditable]="editable"
+    [style]="{
+      textDecoration: todo.completed ? 'line-through' : 'none',
+      color: todo.completed ? '#999' : '#000'
+    }"
+  >
+    {{ todo.title }}
+  </p>
+  <button (click)="onUpdate()">
+    {{ editable ? "Done" : "Edit" }}
+  </button>
 </li>

@@ -1,0 +1,20 @@
+form {
+  display: flex;
+  gap: 1rem;
+  margin-block: 1rem;
+}
+
+input {
+  flex: 1;
+  font-size: 1rem;
+  height: 36px;
+  border: none;
+  padding-inline: 1rem;
+  background-color: #fffa;
+  border-radius: 4px;
+}
+
+button {
+  color: #fff;
+  background-color: #09090b;
+}

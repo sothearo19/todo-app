@@ -3,7 +3,11 @@
   @for (todo of todos; track todo.id) {
   <app-todo-list-item
     [todo]="todo"
-    (delete)="deleteTodo($event)"
+    (update)="updateTodo($event)"
   ></app-todo-list-item>
   }
 </ul>
+<app-delete-todo
+  (delete)="deleteTodo()"
+  [length]="completedTodoCount"
+></app-delete-todo>

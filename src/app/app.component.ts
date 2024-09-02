@@ -10,5 +10,5 @@ import { TodoListComponent } from './components/todo-list/todo-list.component';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'bookish';
+  title = 'Todo App';
 }
