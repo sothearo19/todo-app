@@ -7,17 +7,17 @@
       (change)="onCheckboxChange($event)"
     />
     <span class="checkmark"></span>
+    <p
+      #editableParagraph
+      [contentEditable]="editable"
+      [style]="{
+        textDecoration: todo.completed ? 'line-through' : 'none',
+        color: todo.completed ? '#999' : '#000'
+      }"
+    >
+      {{ todo.title }}
+    </p>
   </label>
-  <p
-    #editableParagraph
-    [contentEditable]="editable"
-    [style]="{
-      textDecoration: todo.completed ? 'line-through' : 'none',
-      color: todo.completed ? '#999' : '#000'
-    }"
-  >
-    {{ todo.title }}
-  </p>
   <button (click)="onUpdate()">
     {{ editable ? "Done" : "Edit" }}
   </button>
